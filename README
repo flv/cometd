@@ -1,0 +1,8 @@
+The cometd code is stored in an external svn repo.
+
+It is linked here with an svn:externals property.
+
+To see it you must check out this code with svn.
+
+Cheers!
+Xantus, project lead
