@@ -4,10 +4,11 @@
 Meeting agenda/action items/outcomes/minutes will be stored here.
 
 
-= Details =
+*Meetings*
 
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * [WikiMinutes20070228 2007-02-28]
+  * [WikiMinutes  2007-03-14] 
+
+
 
 
