@@ -1,0 +1,77 @@
+#summary 2007-04-04 Meeting
+= 2007-04-04 Meeting =
+
+
+== Agenda ==
+
+   * Status from previous meetings  
+      # Protocol doc progress
+      # Test Suite Update  (2-28 meeting mst )
+      
+   * Possible agenda items
+      # Globbing  -  Channels are currently based on URI format without parameters.  
+         {{{
+channel_name  = "/"  path_segments
+path_segments = segment *( "/" segment )
+segment       = *pchar
+pchar         = alphanum | mark
+         }}}
+      Globbing was left out of spec but there is renewed interest.  Listed below are some general goals for globbing
+          * No matching of partial topic names {{{/foo*}}} does not match {{{/foobar}}}
+          * Need at least "this or below" matching   {{{/foo/*}}} would match /foo/bar and {{{/foo/bar/asdf}}} and possibly "this and just one level below" matching
+          * More complex syntax equals more complex matching,  {{{/foo/*/bar}}} will be more difficult....
+     _Possible Solutions_
+          * No wildcards....
+          * Do not allow wildcards and use extension mechansim to indicate wildcards as advanced feature.  Server implementors could then specify type of wildcards the server supports (simple wildcards,   wildcards based on WS-Topics spec, etc).  Possibly allow wildcards in future version of Bayeux spec.
+          * Implement wildcard system based on above goals and include in specfication.  Possibly allow more advanced wildcard systems in extension/advanced feature mechanism.
+          * Investigate and use more advanced wildcarding - JMS globbing (pick a vendor specific one), WS-topics, etc.  Or come up with own specification.  
+
+      
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
