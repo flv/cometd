@@ -1,6 +1,7 @@
 #summary 2007-04-04 Meeting
 = 2007-04-04 Meeting 2:00 PST, 5:00 EST =
 
+*IRC location: #cometd on MAGnet  (irc.perl.org)*
 
 == Agenda ==
 
@@ -54,6 +55,7 @@ _Security_
       
 
           
+
 
 
 
