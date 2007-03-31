@@ -6,7 +6,7 @@
 == Agenda ==
 
 _*Status from previous meetings*_
-    * Protocol doc progress
+    * [http://svn.xantus.org/shortbus/trunk/bayeux/bayeux.html Protocol doc progress]
     * Test Suite Update  (2-28 meeting mst)
       
 
