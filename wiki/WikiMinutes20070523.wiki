@@ -5,7 +5,7 @@
 
 
 = Details =
-
+{{{
 <markn> hey slightlyoff
 <markn> anyone else with us today?
 <markn> gregw?
@@ -233,3 +233,4 @@ gregw> will queue other requests behind the one long poll
 <slightlyoff> markn: I think it's a dead line of questioning for now = \
 <st3fan> slightlyoff: unit testing our cometd stuff is something we're working on now actually
 <markn> ok,  
+}}}
