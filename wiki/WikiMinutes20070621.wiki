@@ -31,10 +31,10 @@ IRC meeting minutes 2006-06-21
 = implementation status =
 
   * python in trouble
-  * perl/sprocketsocket in cpan - not complete but working
+  * perl/sprocket on cpan - alpha state
   * java pretty much complete.  working on "standard" server side API.
   * dojo version is still lacking globbing and full advice support.
-  * FF extension in the works.
+  * xantus is working on a firefox extension
 
 = unified tests =
 
