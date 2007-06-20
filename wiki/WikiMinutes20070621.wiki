@@ -21,3 +21,14 @@ IRC meeting minutes 2006-06-21
   # some fundamentals of how Cometd reduces deployment complexity
   # a discussion of how to integrate auth
   # cross-domain and integration w/ other infrastructure (JMS, etc.)
+
+= implementation status
+
+  * python in trouble
+  * perl/sprocketsocket in cpan - not complete but working
+  * java pretty much complete.  working on "standard" server side API.
+  * dojo version is still lacking globbing and full advice support.
+  * FF extension in the works.
+
+
+  
