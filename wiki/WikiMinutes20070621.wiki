@@ -28,13 +28,27 @@ IRC meeting minutes 2006-06-21
   # a discussion of how to integrate auth
   # cross-domain and integration w/ other infrastructure (JMS, etc.)
 
-= implementation status
+= implementation status =
 
   * python in trouble
   * perl/sprocketsocket in cpan - not complete but working
   * java pretty much complete.  working on "standard" server side API.
   * dojo version is still lacking globbing and full advice support.
   * FF extension in the works.
+
+= unified tests =
+
+  * Xantus will write in perl.
+  * start test case descriptions on wiki
+
+= board nominations = 
+
+  * xantus and gregw nominated
+
+= infrastructure =
+
+ * asking dojo project for svn, drupal, trac, www
+
 
 
   
