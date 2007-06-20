@@ -9,15 +9,15 @@ IRC meeting minutes 2006-06-21
 
 = Spec =
 
-* servers SHOULD optionally accept publish requests without clientID and should apply server specific authentication mechanisms to verify the requests
-* remove status
-* remove ping
-* defined errors - markn to produce  a list
+  * servers SHOULD optionally accept publish requests without clientID and should apply server specific authentication mechanisms to verify the requests
+  * remove status
+  * remove ping
+  * defined errors - markn to produce  a list
 
 
 = white paper =
 
- 1.) a problem description
- 2.) some fundamentals of how Cometd reduces deployment complexity
- 3.) a discussion of how to integrate auth
- 4.) cross-domain and integration w/ other infrastructure (JMS, etc.)
+  # a problem description
+  # some fundamentals of how Cometd reduces deployment complexity
+  # a discussion of how to integrate auth
+  # cross-domain and integration w/ other infrastructure (JMS, etc.)
