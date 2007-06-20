@@ -6,6 +6,12 @@ IRC meeting minutes 2006-06-21
 
 
 = Agenda =
+  * The Bayeux Spec ( http://svn.xantus.org/shortbus/trunk/bayeux/bayeux.html  )
+  * Comet Implementation white paper
+  * The state of each implementation
+  * Unified unit tests
+  * Dojo Board nominations
+  * Infrastructure
 
 = Spec =
 
