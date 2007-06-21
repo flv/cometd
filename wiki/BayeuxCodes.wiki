@@ -9,12 +9,32 @@ List of Bayeux error/response codes.  Includes constant, closest matching HTTP r
 The error field will take the form of 
 
 CONSTANT(CODE): MESSAGE
-ex: RC_INVALID_CHANNEL(405): The meta channel specified is not valid.
 
+Example:
+{{{
+[
+  {
+     "channel": "/meta/invalidchannel",
+     "successful": false,
+     "error": "RC_INVALID_CHANNEL(405): The meta channel specified is not valid.",
+     "clientId": "Un1q31d3nt1f13r",
+     "timestamp": "12:00:00 1970"
+   }
+]
+}}}
+
+
+List of error codes is below:
+
+ 
 || *code* || *constant* || *message* ||
 ||200||RC_SUCCESS||blahblah||
 ||blah||blahblah||blahblah||
 ||blah||blahblah||blahblah||
+
+
+
+
 
 
 
