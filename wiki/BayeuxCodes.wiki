@@ -6,9 +6,16 @@ List of Bayeux error/response codes.  Includes constant, closest matching HTTP r
 
 = Details =
 
-The error field will take the form of 
+The error field will take the form of:  (from protocol doc)
 
-CONSTANT(CODE): MESSAGE
+{{{
+error            = error_code ":" error_args ":" error_message 
+                 | error_code ":" ":" error_message
+error_code       = digit digit digit
+error_args       = string * "," string )
+error_message    = string
+}}}
+
 
 Example:
 {{{
@@ -16,7 +23,7 @@ Example:
   {
      "channel": "/meta/invalidchannel",
      "successful": false,
-     "error": "RC_INVALID_CHANNEL(405): The meta channel specified is not valid.",
+     "error": "405:/meta/invalidchannel:The meta channel specified is not valid.",
      "clientId": "Un1q31d3nt1f13r",
      "timestamp": "12:00:00 1970"
    }
@@ -29,8 +36,10 @@ List of error codes is below:
  
 || *code* || *constant* || *message* ||
 ||200||RC_SUCCESS||blahblah||
+||401||RC_UNAUTHORIZED||This user is not authorized.||
+||403||RC_UNAUTHORIZED||This user is not authorized.||
 ||blah||blahblah||blahblah||
-||blah||blahblah||blahblah||
+
 
 
 
