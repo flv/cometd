@@ -34,12 +34,18 @@ Example:
 List of error codes is below:
 
  
-|| *code* || *constant* || *message* || *sample* ||
-||400||RC_BAD_REQUEST||The incoming request could not be recognized by the server.|| 400:/meta/subscribe::The incoming request could not be recognized by the server."||
-||401||RC_INVALID_CLIENTID||The client ID specified is not valid.||"401::The client ID specified is not valid."||
-||403||RC_CHANNEL_FORBIDDEN||Access to the specified channel is forbidden.||"403:/topic/noaccess:Access to the specified channel is forbidden."||
-||404||RC_UNKNOWN_CHANNEL||The channel specified is unknown.||"404:/channel/noexist:The channel specified is unknown."||
-||405||RC_INVALID_CHANNEL||The channel specified is not valid.||"405:/meta/badchannel:The channel specified is not valid."||
+|| *code* || *constant* || *message* || *explanation* ||
+||400||RC_BAD_REQUEST||The incoming request could not be recognized by the server.|| Status code 400, bad request, is used when an incoming request is not recognized by the server.   A typical case would be when the request contains invalid JSON.|| 
+||401||RC_UNKNOWN_CLIENTID||The client ID specified is unknown.||Response code 401, unknown  client, is used when an incoming request contains a client ID the server does not recognized.||
+||402||RC_MISSING_PARAMETER||The incoming request is missing a required parameter.||Response code 402, missing parameter, is used when an incoming request is missing a required parameter.  The argument list may contain the missing parameter name.||
+||403||RC_CHANNEL_FORBIDDEN||Access to the specified channel is forbidden.||Response code 403, channel forbidden, is used to indicate the client is not authorized access to the request channel.   Meta requests that could use this response code include /meta/subscribe and a Bayeux publish request. ||
+||404||RC_UNKNOWN_CHANNEL||The channel specified is unknown.||Response code 404, unknown channel, is the response code used when a  subscribe, unsubscribe, or publish request tries to access a channel that does not exist.||
+||405||RC_INVALID_CHANNEL||The channel specified is not valid.||Response code 405, invalid channel, is used when the channel format in a request is not valid or for a request to an unknown reserved meta channel.||
+
+
+
+
+
 
 
 
