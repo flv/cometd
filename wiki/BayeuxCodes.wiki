@@ -44,6 +44,7 @@ List of error codes is below:
 ||404||RC_UNKNOWN_CHANNEL||The channel specified is unknown.||Response code 404, unknown channel, is the response code used when a  subscribe, unsubscribe, or publish request tries to access a channel that does not exist.||
 ||405||RC_INVALID_CHANNEL||The channel specified is not valid.||Response code 405, invalid channel, is used when the channel format in a request is not valid or for a request to an unknown reserved meta channel.||
 ||406||RC_UNKNOWN_EXT||The extension specified is unknown.||Response code 406, unknown extension, is used when the incoming bayeux request message contains an ext field that the server does not recognize.||
+||407||RC_PUBLISH_FAILED||The publish request has failed.||Response code 407, publish failed, is used when the server is unable or unwilling to publish the data provided by the client.  Examples could include a server filtering content, or a server limited the amount of publish requests by a client.   Response code 403 should be used when a client is not authorized to publish to a channel.||
 
 
 
