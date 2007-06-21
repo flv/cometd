@@ -35,7 +35,16 @@ List of error codes is below:
 
  
 || *code* || *constant* || *message* || *sample* ||
+||400||RC_BAD_REQUEST||Invalid client id.||"401::The client ID specified is not valid."||
 ||401||RC_INVALID_CLIENTID||Invalid client id.||"401::The client ID specified is not valid."||
+||403||RC_CHANNEL_FORBIDDEN||Access to the specified channel is forbidden.||"403:/topic/noaccess:Access to the specified channel is forbidden."||
+||404||RC_INVALID_CHANNEL||The channel specified is unknown.||"404:/channel/noexist:The channel specified is unknown."||
+||405||RC_INVALID_CHANNEL||The channel specified is not valid.||"405:/meta/badchannel:The channel specified is not valid."||
+
+
+
+
+
 
 
 
