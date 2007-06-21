@@ -34,11 +34,10 @@ Example:
 List of error codes is below:
 
  
-|| *code* || *constant* || *message* ||
-||200||RC_SUCCESS||blahblah||
-||401||RC_UNAUTHORIZED||This user is not authorized.||
-||403||RC_UNAUTHORIZED||This user is not authorized.||
-||blah||blahblah||blahblah||
+|| *code* || *constant* || *message* || *sample* ||
+||401||RC_INVALID_CLIENTID||Invalid client id.||"401::The client ID specified is not valid."||
+
+
 
 
 
