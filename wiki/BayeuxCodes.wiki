@@ -35,7 +35,7 @@ List of error codes is below:
 
  
 || *code* || *constant* || *message* || *sample* ||
-||400||RC_BAD_REQUEST||The incoming request is bad. 400:/meta/subscribe::The incoming request is bad."||
+||400||RC_BAD_REQUEST||The incoming request could not be recognized by the server.|| 400:/meta/subscribe::The incoming request could not be recognized by the server."||
 ||401||RC_INVALID_CLIENTID||The client ID specified is not valid.||"401::The client ID specified is not valid."||
 ||403||RC_CHANNEL_FORBIDDEN||Access to the specified channel is forbidden.||"403:/topic/noaccess:Access to the specified channel is forbidden."||
 ||404||RC_UNKNOWN_CHANNEL||The channel specified is unknown.||"404:/channel/noexist:The channel specified is unknown."||
