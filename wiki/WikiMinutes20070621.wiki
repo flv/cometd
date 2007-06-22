@@ -412,8 +412,51 @@ IRC meeting minutes 2006-06-21
 <slightlyoff> we want:
 <gregw> svn
 }}}
+< slightlyoff> SVN, drupal, trac?
+< gregw> www
+< slightlyoff> and root so we can experiment
+< gregw> NB. I'm minuting this in the wiki http://code.google.com/p/cometd/wiki/WikiMinutes20070621
+< slightlyoff> so we want a system image w/ that stuff, right?
+< gregw> +1
+< slightlyoff> will we do our own web? or do we want drupal?
+< gregw> I think the best is a combination
+< gregw> custom home page - pointing into drupal
+< gregw> with some live demos as part of the custom bit
+<@xantus> +1
+<@xantus> I'll be available to lock svn its copied over
+< slightlyoff> ok
+<@xantus> s/its/when its/
+<@xantus> bleh
+< slightlyoff> I'm gonna ask sitepen for some resources
+< slightlyoff> and failing that, i"m just going to pay for a Rimu image out of my own pocket
+<@xantus> well, its for the project shouldn't it come out of the coffers
+<@xantus> sprinkle a comma somewhere in there
+<@xantus> I'm a bit out of it today
+< slightlyoff> xantus: yeah, but the coffers are tiny = )
+<@xantus> I have a xen instance
+<@xantus> @ cometd.net
+<@xantus> I use it for coding at testing, we can use that
+<@xantus> i'm renting it from mark smith
+<@xantus> I have root so I can give everyone accounts
+<@xantus> its in a colo too, not a someone's house
+< slightlyoff> what's the rent on it?
+< slightlyoff> 'cause I can probably just get the foundation to pay for that
+<@xantus> $15-20 a month
+< slightlyoff> oh, that's nothing
+<@xantus> hehe, it can go up if we request more memory
+<@xantus> but its cheap
+< slightlyoff> and it's on backups?
+<@xantus> I probably owe mark like 6 months of back pay
+<@xantus> on ups?
+<@xantus> yeah, at a colo
+< slightlyoff> no, data backups (disk snapshots or whatever)
+<@xantus> disk backup, no, I backup to dreamhost
+<@xantus> the cometd svn is at dreamhost which has backups
+< slightlyoff> ...who is only rooted *sometimes" ;-)
 
+....later...
 
+< gregw> xantus: slighltyoff: markn: whoever: updated version of the spec has been checked in
+<@xantus> woot
 
   
-
