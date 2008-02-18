@@ -1,0 +1,70 @@
+#The Documentation entry page for Bayeux/Cometd
+
+= Introduction =
+
+Cometd is a project by the [http://dojotoolkit.org/foundation Dojo Foundation]
+
+The primary purpose of Bayeux is to implement responsive user interactions for 
+web clients using Ajax and the server-push technique called Comet.
+
+== Bayeux Overview ==
+
+The [http://svn.xantus.org/shortbus/trunk/bayeux/bayeux.html Bayeux Specification] is written in RFC style and is aimed at defining the interoperability aspects of cometd project. The protocol itself is open to extension and encourages multiple transport implementations.
+
+== Cometd Overview ==
+
+Blah blah
+
+
+
+
+= Using Bayeux =
+
+This section contains material that is applicable to all Bayeux implementations.
+
+== Bayeux Features ==
+ * BayeuxChannels
+ * BayeuxStates
+ * BayeuxFilters
+ * BayeuxExtensions
+
+== Use Cases ==
+ * BayeuxChatExample
+ * BayeuxBroadcast
+ * BayeuxNarrowcast
+ * BayeuxRPC
+
+
+= Using Cometd (and other implementations) =
+
+This section contains material that is applicable to specific Bayeux implementations,
+in most part the implementations are part of the cometd project, but for completeness, non-cometd implementations are included aswell
+
+
+== Cometd Clients ==
+
+=== Javascript Clients ===
+ * CometdDojo
+ * CometdJQuery
+ * CometdExtJs
+
+=== Java Clients ===
+ * CometdJetty
+
+=== Flash Clients ===
+ * ???
+
+== Cometd Servers ==
+
+=== Java Servers ===
+ * CometdJetty
+ * TomcatBayeux ?
+ * BeaBayeux ?
+
+=== Perl Servers ===
+ * CometdPerl
+
+=== Twisted Python Servers ==
+ * CometdTwisted
+ 
+
