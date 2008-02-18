@@ -32,7 +32,7 @@ This section contains material that is applicable to all Bayeux implementations.
  * BayeuxChatExample
  * BayeuxBroadcast
  * BayeuxNarrowcast
- * BayeuxRPC
+ * BayeuxRpc
 
 
 = Using Cometd (and other implementations) =
@@ -45,7 +45,7 @@ in most part the implementations are part of the cometd project, but for complet
 
 === Javascript Clients ===
  * CometdDojo
- * CometdJQuery
+ * CometdJquery
  * CometdExtJs
 
 === Java Clients ===
