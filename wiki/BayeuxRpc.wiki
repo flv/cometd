@@ -1,0 +1,7 @@
+RPC section of the [BayeuxCometdDocumentation Bayeux Cometd Documentation].
+
+= Bayeux for Remote Procedure Calls =
+
+----
+[BayeuxCometdDocumentation prev] [BayeuxCometdDocumentation up] [BayeuxCometdDocumentation next]
+----
