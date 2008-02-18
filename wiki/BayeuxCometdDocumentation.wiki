@@ -1,6 +1,6 @@
-#The Documentation entry page for Bayeux/Cometd
+Documentation entry page for Bayeux Cometd
 
-= Introduction =
+= Bayeux Cometd Introduction =
 
 Cometd is a project by the [http://dojotoolkit.org/foundation Dojo Foundation]
 
@@ -67,4 +67,3 @@ in most part the implementations are part of the cometd project, but for complet
 === Twisted Python Servers ==
  * CometdTwisted
  
-
