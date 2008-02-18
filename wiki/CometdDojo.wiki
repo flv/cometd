@@ -1,0 +1,7 @@
+section of the [BayeuxCometdDocumentation Bayeux Cometd Documentation].
+
+= Dojo toolkit dojox.cometd client =
+
+----
+[BayeuxCometdDocumentation prev] [BayeuxCometdDocumentation up] [BayeuxCometdDocumentation next]
+----
