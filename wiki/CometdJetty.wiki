@@ -1,0 +1,7 @@
+Cometd Jetty section of the [BayeuxCometdDocumentation Bayeux Cometd Documentation].
+
+= Jetty java Cometd client and server =
+
+----
+[BayeuxCometdDocumentation prev] [BayeuxCometdDocumentation up] [BayeuxCometdDocumentation next]
+----
