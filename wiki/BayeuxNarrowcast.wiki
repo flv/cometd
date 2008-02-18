@@ -1,0 +1,7 @@
+section of the [BayeuxCometdDocumentation Bayeux Cometd Documentation].
+
+= Bayeux Narrowcast =
+
+----
+[BayeuxCometdDocumentation prev] [BayeuxCometdDocumentation up] [BayeuxCometdDocumentation next]
+----
