@@ -1,0 +1,7 @@
+Perl section of the [BayeuxCometdDocumentation Bayeux Cometd Documentation].
+
+= Cometd Perl Client ? and Server =
+
+----
+[BayeuxCometdDocumentation prev] [BayeuxCometdDocumentation up] [BayeuxCometdDocumentation next]
+----
