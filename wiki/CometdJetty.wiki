@@ -6,15 +6,15 @@ The cometd client and server java implementations are currently being developed 
 
 = Jetty Cometd Features =
 == Server ==
-* Asynchronous Server Implementation - scales to 10s of thousands of concurrent users.
-* Full Servlet implementation, which may be filtered, dispatched and handled as any other servlet.
-* Pluggable SecurityPolicy
-* DataFilters implmentation for validation and security
-* Extension support
-* Extensions included for timestamp and timesync
+  * Asynchronous Server Implementation:  scales to 10s of thousands of concurrent users.
+  * Full Servlet implementation, which may be filtered, dispatched and handled as any other servlet.
+  * Pluggable SecurityPolicy
+  * DataFilters implmentation for validation and security
+  * Extension support
+  * Extensions included for timestamp and timesync
 
 == Client ==
-* Asynchronous Client Implementation - scales to thousands of concurrent users.
+  * Asynchronous Client Implementation: scales to thousands of concurrent users.
 
 
 ----
