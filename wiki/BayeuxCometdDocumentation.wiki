@@ -61,8 +61,8 @@ in most part the implementations are part of the cometd project, but for complet
 ==== Java Clients ====
  * CometdJetty
 
-==== Flash Clients ====
- * ???
+==== Flex/Flash Clients ====
+ * [http://code.google.com/p/flexcomet/ flexcomet]
 
 == Cometd Servers ==
 
@@ -70,6 +70,7 @@ in most part the implementations are part of the cometd project, but for complet
  * CometdJetty
  * TomcatBayeux ?
  * BeaBayeux ?
+ * [http://www-1.ibm.com/support/docview.wss?uid=isg1PK57246 IBM Websphere]
 
 ==== Perl Servers ====
  * CometdPerl
