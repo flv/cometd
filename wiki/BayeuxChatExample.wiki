@@ -133,9 +133,14 @@ client.addListener(new MessageListener(){
         }
      }
 });
-        
-        
 }}}
+
+The important things to note with this code are:
+  * The server side can have bayeux clients
+  * The server side can originate a message published to a channel
+  * A message may be published to all subscribers to a channel, or delivered
+    to just a single subscriber to a channel.
+  * Listeners can be used to handle removal of clients
 
 
 = Private Messages =
