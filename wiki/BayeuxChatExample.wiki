@@ -57,9 +57,9 @@ It is possible to maintain a list of users without implementing any server side 
     if (message.data.join) {
       dojox.cometd.publish("/chat/demo", { user: room._username});
     }
-    updateUserList(from);
+    updateMember(from);
     if (text) {
-      // do something with chat
+      addChat(from,text);
     }
   }
 }}}
@@ -142,6 +142,25 @@ The important things to note with this code are:
     to just a single subscriber to a channel.
   * Listeners can be used to handle removal of clients
 
+The client side code needs to be modified to handle handle receipt of the members array differently to the receipt of a chat message:
+{{{
+  _chat: function(message){
+    if (message.data instanceof Array) {
+      updateMembers(message.data);
+    }
+    else {
+      var from=message.data.user;
+      if (message.data.join) {
+        updateMember(from);
+      }
+
+      var text=message.data.chat;
+      if (text) { 
+        addChat(from,text);
+      }
+    }
+  }
+}}}
 
 = Private Messages =
 
