@@ -71,11 +71,15 @@ While this mechanism works, it is not optimal as:
   * The mechanism is not reliable for leaving, as some clients my silently be disconnected.
 
 == Server side user list ==
+If the chat room member list is maintained on the server side, then the server can send a list of existing members to each new client as they join the list.
+
+Using the Jetty java API, this can be done as follows:
 
 
-= Security and Validation =
 
 = Private Messages =
+
+= Security and Validation =
 
 ----
 [BayeuxCometdDocumentation prev] [BayeuxCometdDocumentation up] [BayeuxCometdDocumentation next]
