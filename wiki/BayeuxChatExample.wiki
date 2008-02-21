@@ -24,12 +24,12 @@ var room = {
     var from=message.data.user;
     var text=message.data.chat;
     // do something with chat
-}
+   }
 dojox.cometd.subscribe("/chat/demo", room, "_chat");
 }}}
   * Write client javascript to tell the room you have joined:
 {{{
-dojox.cometd.publish("/chat/demo", { user: room._username, chat : room._user
+dojox.cometd.publish("/chat/demo", { user: room._username, join:true, chat : room._user
 name+" has joined"});
 }}}
   * Write client javascript to publish anything typed by the user
@@ -48,6 +48,27 @@ This example can be seen as part of the  [http://svn.codehaus.org/jetty-contrib/
 But a basic chat room is not very functional.  Most reasonable chat rooms will provide a list of users that are currently in the room that will be updated as users join and leave.
 
 == Client side user list ==
+
+It is possible to maintain a list of users without implementing any server side code. Each client simply needs to watch for join messages and publish an empty message in response:
+{{{
+  _chat: function(message){
+    var from=message.data.user;
+    var text=message.data.chat;
+    if (message.data.join) {
+      dojox.cometd.publish("/chat/demo", { user: room._username});
+    }
+    updateUserList(from);
+    if (text) {
+      // do something with chat
+    }
+  }
+}}}
+Thus soon after joining, every client will receive a message from every other client in the room, and thus will be able to update their list of members.  A similar technique can be done with leave messages to remove users from the members list.
+
+While this mechanism works, it is not optimal as:
+  * The emtpy messages are needed only by the newly joining client, but they are published to the channel and thus delivered to every client. This wastes bandwidth and causes unnecessary server activity.
+  * The member messages will not arrive at once, so the member list will visibly be updated many times.
+  * The mechanism is not reliable for leaving, as some clients my silently be disconnected.
 
 == Server side user list ==
 
