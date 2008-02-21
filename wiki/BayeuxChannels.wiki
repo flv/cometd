@@ -1,6 +1,10 @@
 Bayeux Channels section of the [BayeuxCometdDocumentation Bayeux Cometd Documentation].
 
-= Main Heading =
+= Bayeux Channels =
+
+== Meta Channels ==
+
+== Service Channels ==
 
 ----
 [BayeuxCometdDocumentation prev] [BayeuxCometdDocumentation up] [BayeuxCometdDocumentation next]
