@@ -75,44 +75,65 @@ If the chat room member list is maintained on the server side, then the server c
 
 Using the proposed java API, this can be done as follows:
 {{{        
-        Bayeux bayeux=(Bayeux)servletContext.getAttribute(Bayeux.DOJOX_COMETD_BAYEUX);
-        Client client = bayeux.newClient("chat");
-        final ConcurrentMap<String,Set<String>> members = new ConcurrentHashMap<String,Set<String>>();
+
+// Create data structure to hold member lists (should be class field)
+final ConcurrentMap<String,Set<String>> members = new ConcurrentHashMap<String,Set<String>>();
+
+// Get the Bayeux API instance
+final Bayeux bayeux=(Bayeux)servletContext.getAttribute(Bayeux.DOJOX_COMETD_BAYEUX);
+
+// Create a server side client
+final Client client = bayeux.newClient("chat");
         
-        client.addListener(new MessageListener(){
-            public void deliver(Client joiner, Client client, Message msg)
-            {
-                String channel=msg.getChannel();
-                Map<?,?> data = (Map<?,?>)msg.getData();
+// Subscribe the client to all chat rooms
+bayeux.getChannel("/chat/**",true).subscribe(client);
+
+// Add a message listener
+client.addListener(new MessageListener(){
+    public void deliver(Client joiner, final Client client, Message msg)
+    {
+        // extract channel and data
+        String channel=msg.getChannel();
+        Map<?,?> data = (Map<?,?>)msg.getData();
                 
-                if (Boolean.TRUE.equals(data.get("join")))
+        // if the message is a join message
+        if (Boolean.TRUE.equals(data.get("join")))
+        {
+            // get the set of members (in convoluted concurrent style)
+            Set<String> tmp = members.get(channel);
+            if (tmp==null)
+            {
+                Set<String> new_list=new CopyOnWriteArraySet<String>();
+                tmp=members.putIfAbsent(channel,new_list);
+                if (tmp==null)
+                    tmp=new_list;
+            }            
+            final Set<String> members=tmp;
+            
+            // add the user to the member set
+            final String username=(String)data.get("user");        
+            members.add(username);
+            
+            // send the members just to the new member
+            // (other members will see the join message)
+            joiner.deliver(client,channel,members,msg.getId());
+
+            // add a remove listener to ensure we know the user has left
+            joiner.addListener(new RemoveListener(){
+                public void removed(String clientId, boolean timeout)
                 {
-                    Set<String> tmp = members.get(channel);
-                    if (tmp==null)
-                    {
-                        Set<String> new_list=new CopyOnWriteArraySet<String>();
-                        tmp=members.putIfAbsent(channel,new_list);
-                        if (tmp==null)
-                            tmp=new_list;
-                    }
-                    
-                    final Set<String> members=tmp;
-                    final String username=(String)data.get("user");
-                    
-                    members.add(username);
-                    joiner.addListener(new RemoveListener(){
-                        public void removed(String clientId, boolean timeout)
-                        {
-                            members.remove(username);
-                        }
-                    });
-                    
-                    joiner.deliver(client,channel,members,msg.getId());
+                    // remove user from members set
+                    members.remove(username);
+
+                    // publish new list to all members
+                    bayeux.getChannel(channel,false).publish(client,bayeux,null);
                 }
-            }
-        });
+            });
+                    
+        }
+     }
+});
         
-        bayeux.getChannel("/chat/**",true).subscribe(client);
         
 }}}
 
