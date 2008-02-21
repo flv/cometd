@@ -73,8 +73,48 @@ While this mechanism works, it is not optimal as:
 == Server side user list ==
 If the chat room member list is maintained on the server side, then the server can send a list of existing members to each new client as they join the list.
 
-Using the Jetty java API, this can be done as follows:
-
+Using the proposed java API, this can be done as follows:
+{{{        
+        Bayeux bayeux=(Bayeux)servletContext.getAttribute(Bayeux.DOJOX_COMETD_BAYEUX);
+        Client client = bayeux.newClient("chat");
+        final ConcurrentMap<String,Set<String>> members = new ConcurrentHashMap<String,Set<String>>();
+        
+        client.addListener(new MessageListener(){
+            public void deliver(Client joiner, Client client, Message msg)
+            {
+                String channel=msg.getChannel();
+                Map<?,?> data = (Map<?,?>)msg.getData();
+                
+                if (Boolean.TRUE.equals(data.get("join")))
+                {
+                    Set<String> tmp = members.get(channel);
+                    if (tmp==null)
+                    {
+                        Set<String> new_list=new CopyOnWriteArraySet<String>();
+                        tmp=members.putIfAbsent(channel,new_list);
+                        if (tmp==null)
+                            tmp=new_list;
+                    }
+                    
+                    final Set<String> members=tmp;
+                    final String username=(String)data.get("user");
+                    
+                    members.add(username);
+                    joiner.addListener(new RemoveListener(){
+                        public void removed(String clientId, boolean timeout)
+                        {
+                            members.remove(username);
+                        }
+                    });
+                    
+                    joiner.deliver(client,channel,members,msg.getId());
+                }
+            }
+        });
+        
+        bayeux.getChannel("/chat/**",true).subscribe(client);
+        
+}}}
 
 
 = Private Messages =
